@@ -8,6 +8,7 @@ import Footer from './components/Footer';
 import Home from './pages/Home';
 import ExcerciseDetail from './pages/ExcersiceDetail';
 import BmiCalculator from './pages/BmiCalculator';
+import User from './pages/User';
 
 const App = () => {
   return (
@@ -15,6 +16,7 @@ const App = () => {
       <Navbar />
       <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/User" element={<User />} />
           <Route path="/exercise/:id" element={<ExcerciseDetail />} />
           <Route path="/BmiCalculator" element={<BmiCalculator />} />
       </Routes>
