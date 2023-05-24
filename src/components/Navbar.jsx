@@ -17,6 +17,7 @@ const Navbar = () => (
       alignItems="flex-end"
     >
       <Link to="/" style={{ textDecoration: 'none', color: '#b2becd', borderBottom: '3px solid #1B45CE' }}>Home</Link>
+      <Link to="/User" style={{textDecoration: 'none', color: '#b2becd' }}>User</Link>
       <a href="#exercises" style={{ textDecoration: 'none', color: '#b2becd' }}>Exercises</a>
       <Link to="/BmiCalculator" style={{ textDecoration: 'none', color: '#b2becd' }}>BMI Calculator</Link>
     </Stack>
