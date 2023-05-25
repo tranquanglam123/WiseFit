@@ -9,7 +9,7 @@ import Home from './pages/Home';
 import ExcerciseDetail from './pages/ExcersiceDetail';
 import BmiCalculator from './pages/BmiCalculator';
 import User from './pages/User';
-
+import Location from './pages/Location';
 const App = () => {
   return (
     <Box width="400px" sx={ {width: { xl: '1488px'} } } m="auto">
@@ -19,6 +19,7 @@ const App = () => {
           <Route path="/User" element={<User />} />
           <Route path="/exercise/:id" element={<ExcerciseDetail />} />
           <Route path="/BmiCalculator" element={<BmiCalculator />} />
+          <Route path="/Location" element={<Location />} />
       </Routes>
       <Footer />
     </Box>
