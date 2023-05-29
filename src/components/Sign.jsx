@@ -1,9 +1,14 @@
 import React from 'react';
-import { Button, Box, Grid } from '@mui/material';
+import { Button, Box, Grid, Typography } from '@mui/material';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import GoogleIcon from '@mui/icons-material/Google';
+import { Link } from 'react-router-dom';
 
-const SignButton= () => {
+const SignButton = ({ type, handleAction }) => {
+  const buttonText = type === 'Login' ? 'Login' : 'Register';
+  const signUpText = type === 'Login' ? 'New to WiseFit? Sign Up' : 'Already on WiseFit? Sign In';
+  const signUpLink = type === 'Login' ? '/register' : '/login';
+
   return (
     <Box
       sx={{
@@ -16,6 +21,7 @@ const SignButton= () => {
       <Button
         variant="contained"
         color="primary"
+        onClick={handleAction}
         sx={{
           marginBottom: '0.5rem',
           fontSize: '25px',
@@ -26,7 +32,7 @@ const SignButton= () => {
           justifyContent: 'center',
         }}
       >
-        LOG IN
+        {buttonText}
       </Button>
 
       <Box sx={{ width: '80%' }}>
@@ -98,6 +104,14 @@ const SignButton= () => {
               <GoogleIcon sx={{ fontSize: 40, marginRight: '0.5rem' }} />
               <span style={{ flex: '1' }}>Continue with Google</span>
             </Button>
+          </Grid>
+          <Grid item xs={12}>
+            <Typography variant="body2" color="textSecondary" align="center" sx={{ margin: '0.5rem' }}>
+              {signUpText}{' '}
+              <Link to={signUpLink} style={{ color: '#1B45CE', textDecoration: 'underline' }}>
+                {type === 'Login' ? 'Sign Up' : 'Sign In'}
+              </Link>
+            </Typography>
           </Grid>
         </Grid>
       </Box>
