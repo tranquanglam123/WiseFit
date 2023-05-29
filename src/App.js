@@ -1,18 +1,29 @@
+import React from 'react'
 import './App.css';
-import Form from './pages/Form';
-import { BrowserRouter as router, Route, Routes } from 'react-router-dom';
+import { Box } from '@mui/material';
+import {Route, Routes } from 'react-router-dom';
 
-function App(){
-  return(
-    <router>
-      <div className='App'>
-      <>
-        <Form/>
-
-      </>
-      </div>
-    </router>
-  );
+import Navbar from './components/Navbar';
+import Footer from './components/Footer';
+import Home from './pages/Home';
+import ExcerciseDetail from './pages/ExcersiceDetail';
+import BmiCalculator from './pages/BmiCalculator';
+import User from './pages/User';
+import Location from './pages/Location';
+const App = () => {
+  return (
+    <Box width="400px" sx={ {width: { xl: '1488px'} } } m="auto">
+      <Navbar />
+      <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/User" element={<User />} />
+          <Route path="/exercise/:id" element={<ExcerciseDetail />} />
+          <Route path="/BmiCalculator" element={<BmiCalculator />} />
+          <Route path="/Location" element={<Location />} />
+      </Routes>
+      <Footer />
+    </Box>
+  )
 }
 
-export default App
+export default App;
