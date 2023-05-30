@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route,useNavigate } from 'react-router-dom';
 import Form from './pages/Form';
 import Home from './pages/Home';
@@ -14,6 +14,16 @@ function App() {
     const authentication = getAuth();
 
     //check Login or Register
+    
+    //Login functionality
+    if (id===1) {
+      signInWithEmailAndPassword(authentication, email, password).then((response) => {
+        navigate('/home')
+        sessionStorage.setItem('Auth Token', response._tokenResponse.refreshToken)
+      })
+    }
+
+    //Reg function
     if (id === 2){
     createUserWithEmailAndPassword(authentication, email, password).then((response) => {
           navigate('/home')
@@ -21,11 +31,19 @@ function App() {
         })
     }
   }
+  useEffect(() => {
+    let authToken = sessionStorage.getItem('Auth Token')
+
+    //condition check
+    if (authToken) {
+      navigate('/home')
+    }
+  }, [])
   return (
       <div className='App'>
 
         <Routes>
-        <Route path="/login" element={<Form title="Login" setEmail={setEmail} setPassword={setPassword} handleAction={() => handleAction(1)}/>} />
+        <Route path="/" element={<Form title="Login" setEmail={setEmail} setPassword={setPassword} handleAction={() => handleAction(1)}/>} />
         <Route path="/register" element={<Form title="Register" setEmail={setEmail} setPassword={setPassword} handleAction={() => handleAction(2)} />} />
         <Route path='/home' element={<Home />} />
         </Routes>

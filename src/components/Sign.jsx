@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 const SignButton = ({ type, handleAction }) => {
   const buttonText = type === 'Login' ? 'Login' : 'Register';
   const signUpText = type === 'Login' ? 'New to WiseFit? Sign Up' : 'Already on WiseFit? Sign In';
-  const signUpLink = type === 'Login' ? '/register' : '/login';
+  const signUpLink = type === 'Login' ? '/register' : '/';
 
   return (
     <Box
