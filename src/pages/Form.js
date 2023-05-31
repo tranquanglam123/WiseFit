@@ -18,7 +18,7 @@ export default function Form({ title, setEmail, setPassword, handleAction }) {
       justifyContent: 'flex-end',
       height: '100vh',
       backgroundImage: 'url(https://wallpapercave.com/wp/wp2563942.jpg)',
-      backgroundSize: '80%',
+      backgroundSize: '100%',
       backgroundPosition: 'left',
     }}>
       <Box
@@ -27,7 +27,7 @@ export default function Form({ title, setEmail, setPassword, handleAction }) {
           padding: '2rem',
           borderRadius: '8px',
           width: '500px',
-          height: '100%',
+          height: '80%',
           marginLeft: '100px',
           marginRight: '50px',
         }}

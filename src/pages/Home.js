@@ -7,6 +7,7 @@ import { useNavigate } from 'react-router-dom';
 const Home = () => {
   const [bodyPart, setBodyPart] = useState('all');
   const [exercises, setExercises] = useState([]);
+  /*
   let navigate = useNavigate();
   useEffect(() => {
     let authToken = sessionStorage.getItem('Auth Token')
@@ -19,7 +20,7 @@ const Home = () => {
     else {
       navigate('/')
     }
-  }, [])
+  }, [])*/
   return (
     <Box>
       <HeroBanner />
