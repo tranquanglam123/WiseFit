@@ -3,6 +3,8 @@ import { Button, Typography, Box, Table, TableBody, TableCell, TableRow, TextFie
 import RapidoScale  from '../assets/images/scale.jpg';
 import MiBand3  from '../assets/images/1_Mi_Band_3.jpg';
 import {useNavigate } from 'react-router-dom';
+import { getFirestore, doc, setDoc } from 'firebase/firestore';
+import { db } from '../utils/Firebase-config';
 function UserProfile() {
   let navigate = useNavigate();
   const [user, setUser] = useState({
@@ -15,7 +17,7 @@ function UserProfile() {
     },
   });
 
-  const handleEdit = (field, value) => {
+  const handleEdit =async (field, value) => {
     setUser(prevUser => ({
       ...prevUser,
       information: {
@@ -23,6 +25,8 @@ function UserProfile() {
         [field]: value,
       },
     }));
+    const userDocRef = doc(db, 'users', 'userId'); // Replace 'userId' with the actual user ID
+      await setDoc(userDocRef, { information: user.information }, { merge: true });
   };
 
   return (
