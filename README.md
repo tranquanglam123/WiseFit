@@ -1,4 +1,4 @@
-![fitness react web app](https://user-images.githubusercontent.com/60597502/180904680-3ceba3e4-b8e2-4deb-a724-22731a849e91.png)
+![image](https://github.com/tranquanglam123/WiseFit/assets/101560324/c2a6d554-341a-4459-958e-87afe30d9c74)
 
  # 😱 Features:
  <ul>
@@ -56,8 +56,9 @@ ESLINT_NO_DEV_ERRORS=true
  <pre> npm install --legacy-peer-deps </pre>
   ### OR
   <pre> yarn add --legacy-peer-deps</pre>
+  ### Change the .env key with your rapid api key
 ### At last run
   <pre> npm start</pre>
-# 😈 Live <a href="https://nastech-fitness-tracking-exercises.netlify.app/">Demo</a>
+# 😈 Live <a href="https://resplendent-heliotrope-1acfc1.netlify.app//">Demo</a>
  # :small_blue_diamond:connect with me for more amazing projects:
 
